@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Campus Lost & Found – custom styles (moved from the <style> tags
+   of landing / login / signup / dashboard / products .html)
+------------------------------------------------------------------- */
+html { scroll-behavior: smooth; }
+
+/* hover lift (3 strengths: cards on auth pages / dashboard / landing) */
+.hover-lift-sm { transition: transform .25s ease, box-shadow .25s ease; }
+.hover-lift-sm:hover { transform: translateY(-3px); }
+.hover-lift { transition: transform .25s ease, box-shadow .25s ease; }
+.hover-lift:hover { transform: translateY(-4px); }
+.hover-lift-lg { transition: transform .3s ease, box-shadow .3s ease; }
+.hover-lift-lg:hover { transform: translateY(-6px); }
+
+/* dashboard */
+.bar-grow { transition: height .8s cubic-bezier(.22,1,.36,1); }
+.campus-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+.campus-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 999px; }
+#sidebar { transition: transform .3s ease; }
+#sidebar-overlay { transition: opacity .3s ease; }
+#toast { transition: opacity .3s ease, transform .3s ease; }
+
+/* floating badges – landing hero (4 badges) */
+@keyframes float1 { 0%,100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-16px) rotate(-6deg); } }
+@keyframes float2 { 0%,100% { transform: translateY(0) rotate(5deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
+@keyframes float3 { 0%,100% { transform: translateY(0) rotate(4deg); } 50% { transform: translateY(-14px) rotate(4deg); } }
+@keyframes float4 { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-18px) rotate(-4deg); } }
+.float-badge-1 { animation: float1 6s ease-in-out infinite; }
+.float-badge-2 { animation: float2 7s ease-in-out infinite; animation-delay: .5s; }
+.float-badge-3 { animation: float3 6.5s ease-in-out infinite; animation-delay: 1s; }
+.float-badge-4 { animation: float4 7.5s ease-in-out infinite; animation-delay: 1.5s; }
+
+/* floating badges – login / signup (3 badges, slightly smaller movement) */
+@keyframes authFloat1 { 0%,100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-14px) rotate(-6deg); } }
+@keyframes authFloat2 { 0%,100% { transform: translateY(0) rotate(5deg); } 50% { transform: translateY(-18px) rotate(5deg); } }
+@keyframes authFloat3 { 0%,100% { transform: translateY(0) rotate(4deg); } 50% { transform: translateY(-12px) rotate(4deg); } }
+.auth-float-1 { animation: authFloat1 6s ease-in-out infinite; }
+.auth-float-2 { animation: authFloat2 7s ease-in-out infinite; animation-delay: .4s; }
+.auth-float-3 { animation: authFloat3 6.5s ease-in-out infinite; animation-delay: .8s; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* mobile menu + password strength bar */
+.mobile-menu { transition: max-height .3s ease, opacity .3s ease; }
+.strength-bar { transition: width .3s ease, background-color .3s ease; }
